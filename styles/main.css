@@ -1,0 +1,362 @@
+/* ==========================================================================
+   RESET + ROOT VARIABLES
+   ========================================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+:root {
+    --bg:        #FDFAF7;
+    --paper:     #FFF8F2;
+    --accent:    #F4A3A8;
+    --accent-dark:#E88A92;
+    --text:      #2D1F1A;
+    --text-light:#5C4A44;
+    --header:    #F9D8C9;
+    --border:    #F0E0D8;
+    --green:     #A8D5BA;
+    --shadow-sm: 0 4px 12px rgba(45, 31, 26, 0.06);
+    --shadow-md: 0 8px 24px rgba(45, 31, 26, 0.09);
+    --radius:    16px;
+}
+
+body {
+    font-family: 'SF Pro Display', system-ui, sans-serif;
+    font-weight: 400;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.55;
+    font-size: 17px;
+}
+
+/* ==========================================================================
+   TYPOGRAPHY
+   ========================================================================== */
+a {
+    text-decoration: none;
+}
+
+h1, h2, h3 {
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--text);
+}
+
+h2 {
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    margin-bottom: 1.4rem;
+    text-align: center;
+}
+
+h3 {
+    font-size: 1.4rem;
+    margin: 0.8rem 0 0.4rem;
+}
+
+
+header {
+    background: var(--header);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--shadow-sm);
+    backdrop-filter: blur(8px);
+}
+
+header {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--text);
+    font-weight: 700;
+    font-size: 1.6rem;
+}
+
+.logo img {
+    width: 58px;
+    height: 58px;
+    object-fit: contain;
+}
+
+
+@media (max-width: 768px) {
+    .nav-links {
+     background: var(--header);
+    display: none;
+    position: absolute;
+    flex-direction: column;
+}
+.nav-links.active {
+    display: flex;
+    top:100px;
+    right: 2%;
+    position: absolute;
+    flex-direction: column;
+    text-align: center;
+}
+
+
+.burger {
+    cursor: pointer;
+    display: block;
+}
+.burger span{
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #000000;
+    margin: 5px;
+}
+}
+
+
+
+nav {
+    display: flex;
+}
+
+nav a {
+    color: var(--text);
+    font-weight: 500;
+    font-size: 1.05rem;
+    padding: 0.5rem 0.8rem;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+}
+
+nav a:hover,
+nav a:focus {
+    background: rgba(244, 163, 168, 0.15);
+    color: var(--accent-dark);
+}
+
+/* ==========================================================================
+   MAIN LAYOUT
+   ========================================================================== */
+
+.wrapper {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    margin: 2.5rem 0;
+}
+
+/* Карточки специалистов + преимущества */
+.item {
+    background: var(--paper);
+    border-radius: var(--radius);
+    padding: 2rem 1.6rem;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.25s ease;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border: 1px solid var(--border);
+}
+
+.item:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--accent);
+}
+
+.item img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto;
+    border: 3px solid #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* Кнопки */
+.hero-btn,
+a.hero-btn {
+    display: inline-block;
+    background: var(--accent);
+    color: white;
+    font-weight: 600;
+    padding: 0.9rem 2rem;
+    border-radius: 12px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    margin-top: 1rem;
+    font-size: 1.05rem;
+    border: none;
+    cursor: pointer;
+}
+
+.hero-btn:hover,
+a.hero-btn:hover {
+    background: var(--accent-dark);
+    transform: translateY(-1px);
+}
+
+/* Секции с заголовками по центру */
+section.text-center {
+    text-align: center;
+    max-width: 780px;
+    margin: 4rem auto 3rem;
+}
+
+/* Карта */
+iframe {
+    border-radius: var(--radius);
+    border: none;
+    box-shadow: var(--shadow-sm);
+}
+
+/* Специалисты — новая раскладка */
+
+
+
+.specialist-card {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 40px;
+    align-items: start;
+    background: #FEF9F5;
+    border-radius: 24px;
+    padding: 40px 32px;
+    margin-bottom: 60px;
+    box-shadow: 0 12px 36px rgba(0,0,0,0.08);
+}
+
+
+.specialist-photo img {
+    width: 100%;
+    max-width: 360px;
+    height: auto;
+    border-radius: 20px;
+    object-fit: cover;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+.specialist-info h3 {
+    font-size: 2.1rem;
+    margin-bottom: 8px;
+}
+
+.specialist-role {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #3AA68F;
+    margin-bottom: 20px;
+}
+
+.specialist-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 16px 0 24px;
+}
+
+.specialist-list li {
+    position: relative;
+    padding-left: 28px;
+    margin-bottom: 12px;
+    font-size: 1.05rem;
+}
+
+.specialist-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #3AA68F;
+    font-size: 1.6rem;
+    line-height: 1;
+}
+
+.specialist-card blockquote {
+    font-style: italic;
+    color: #4a4442;
+    border-left: 4px solid #BAE0DA;
+    padding-left: 20px;
+    margin: 28px 0;
+    font-size: 1.15rem;
+}
+
+.contact-block {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: start;
+    gap:5px;
+    margin-top: 32px;
+}
+
+.contact-block button {
+    display: inline-block;
+    background: var(--accent);
+    color: white;
+    font-weight: 600;
+    padding: 0.9rem 2rem;
+    border-radius: 12px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    font-size: 1.05rem;
+    border: none;
+    cursor: pointer;
+}
+
+.phone {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #2F2A2A;
+}
+
+/* Мобильная версия */
+@media (max-width: 880px) {
+    .specialist-card,
+    .specialist-card.reverse {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        padding: 32px 20px;
+    }
+    
+    .specialist-photo img {
+        max-width: 100%;
+        margin: 0 auto;
+        display: block;
+    }
+}
+
+/* Мобильная адаптивность */
+@media (max-width: 768px) {
+    header .wrapper {
+        flex-direction: column;
+        padding: 1rem;
+    }
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+}
+

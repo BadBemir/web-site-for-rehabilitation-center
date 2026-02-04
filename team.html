@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/fonts.css">
+    <title>ШагАй — Наши специалисты</title>
+</head>
+<body>
+    <header>
+        <a href="/">
+        <div class="logo">
+            <img src="images/logo.png" alt="bear-logo">
+            <h1>ШагАй</h1>
+        </div>
+        </a>
+        <div class="burger" id="burgerMenu">
+            <span> </span>
+            <span> </span>
+            <span> </span>
+        </div>
+        <nav class="nav-links" id="navLinks">
+            <a style="text-wrap: nowrap;" href="about.html" class="nav-link">О нас</a>
+            <a href="contact.html" class="nav-link">Контакты</a>
+            <a href="team.html" class="nav-link">Специалисты</a>
+        </nav>
+
+        
+    </header>
+
+    <main>
+        <div class="wrapper">
+            <h2>Наши специалисты</h2>
+
+            <!-- Специалист 1 -->
+            <section class="specialist-card">
+                <div class="specialist-photo">
+                    <img src="images/specialist1.jpg" alt="Худякова Ольга Николаевна">
+                </div>
+                <div class="specialist-info">
+                    <h3 id="Olga">Худякова Ольга Николаевна</h3>
+                    <div class="specialist-role">Дефектолог, специалист по коррекции речевых и психических нарушений</div>
+                    
+                    <p>Опытный дефектолог с высшим образованием и 8-летним стажем работы с детьми, имеющими сложные нарушения развития.</p>
+                    
+                    <p>Прошла авторские семинары у ведущих психиатров и логопедов России (Пискунова М., Робилко Юлия, Цветков А.В., Николаева Т.Е., Косинова Е.В. и другие).</p>
+
+                    <h4>Диагнозы с которыми работаю:</h4>
+                    <ul class="specialist-list">
+                        <li>ЗРР, алалия, дизартрия</li>
+                        <li>Расстройства аутистического спектра (РАС) любой степени выраженности</li>
+                        <li>СДВГ (синдром дефицита внимания и гиперактивности)</li>
+                        <li>Умственная отсталость (ИН), задержка психического развития (ЗПР)</li>
+                        <li>Синдром Дауна и другие генетические, опорно-двигательные синдромы</li>
+                        <li>Нарушения слуха, зрения, опорно-двигательного аппарата</li>
+                    </ul>
+
+                    <h4>Что предлагаю:</h4>
+                    <ul class="specialist-list">
+                        <li>Индивидуальную диагностику уровня развития</li>
+                        <li>Персональную коррекционную программу с учётом особенностей именно вашего ребёнка</li>
+                        <li>Развитие речи, коммуникации, мышления, памяти, внимания</li>
+                        <li>Коррекцию проблемного поведения (в том числе в условиях инклюзии)</li>
+                        <li>Обучение родителей эффективным приёмам взаимодействия и развития ребёнка дома</li>
+                    </ul>
+
+                    <blockquote>
+                        «Каждый ребёнок уникален. Моя задача — найти к нему ключ, раскрыть его потенциал и помочь максимально адаптироваться к жизни в обществе.»
+                    </blockquote>
+
+                    <div class="contact-block">
+                        <h4 id="OlgaNumber">+7 (914) 692-96-94</h4>
+                        <button onclick="navigator.clipboard.writeText(document.getElementById('ElenaNumber').innerText)" >Скопировать номер телефона</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Специалист 2 -->
+            <section class="specialist-card">
+                <div class="specialist-photo">
+                    <img src="images/specialist2.jpg" alt="Никикишова Елена Александровна">
+                </div>
+                <div class="specialist-info">
+                    <h3 id="Elena">Никишова Елена Александровна</h3>
+                    <div class="specialist-role">Логопед</div>
+                    
+                    <p>Елена Александровна — квалифицированный логопед, специализируется на запуске и коррекции речи у детей с различными особенностями развития.</p>
+
+                    <h4>Основные направления логопедической работы:</h4>
+                    <ul class="specialist-list">
+                        <li>Индивидуальная диагностика речевого развития</li>
+                        <li>Работа с детьми раннего возраста (от 3 лет) — запуск и коррекция речи</li>
+                        <li>Постановка и автоматизация звукопроизношения</li>
+                        <li>Логопедический массаж</li>
+                        <li>Подготовка к школе (индивидуальная)</li>
+                        <li>Комплексная помощь детям со сложной структурой речевого дефекта: ЗПРР, РДА, ДЦП, умственная отсталость, синдром Дауна и др.</li>
+                    </ul>
+
+                    <p>Занятия проходят в доброжелательной атмосфере, с учётом возраста, темперамента и особенностей ребёнка.</p>
+
+                    <div class="contact-block">
+                        <h4 id="ElenaNumber">+7 (924) 128-99-96</h4>
+                        <button onclick="navigator.clipboard.writeText(document.getElementById('ElenaNumber').innerText)" >Скопировать номер телефона</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Специалист 3 -->
+            <section class="specialist-card">
+                <div class="specialist-photo">
+                    <img src="images/specialist3.jpg" alt="Бадретдинова Озода Озодовна">
+                </div>
+                <div class="specialist-info">
+                    <h3 id="Ozoda">Бадретдинова Озода Озодовна</h3>
+                    <div class="specialist-role">Педагог раннего развития</div>
+                    
+                    <p>Озода Озодовна — педагог раннего развития, проводит бережные, увлекательные индивидуальные и групповые занятия для малышей.</p>
+
+                    <h4>Главные направления работы:</h4>
+                    <ul class="specialist-list">
+                        <li>Развитие познавательных способностей</li>
+                        <li>Запуск и стимуляция речи</li>
+                        <li>Формирование коммуникативных навыков</li>
+                        <li>Развитие представлений об окружающем мире</li>
+                        <li>Особое внимание — мелкой и крупной моторике</li>
+                        <li>Творчество для самых маленьких</li>
+                        <li>Развитие сенсорных ощущений, слуха, ритма, музыкальности</li>
+                    </ul>
+
+                    <p>Используемые подходы: Методики Монтессори и Реджо, принципы гуманной педагогики.</p>
+                    
+                    <p>Занятия построены так, чтобы ребёнок чувствовал себя комфортно, с удовольствием познавал новое и раскрывал свои способности.</p>
+
+                    <div class="contact-block">
+                        <h4 id="OzodaNumber">+7 (924) 439-14-51</h4>
+                        <button onclick="navigator.clipboard.writeText(document.getElementById('OzodaNumber').innerText)" >Скопировать номер телефона</button>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+    <script src="scripts/main.js"></script>
+</body>
+</html>

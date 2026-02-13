@@ -186,7 +186,9 @@ header {
     gap: 24px;
     margin: 2.5rem 0;
 }
-
+section .item {
+    margin: 15px;
+}
 /* Карточки (преимущества, специалисты на главной) */
 .item {
     background: var(--paper);

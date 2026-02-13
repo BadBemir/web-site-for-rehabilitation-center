@@ -1,15 +1,18 @@
 /* SF Pro Display — обычные веса */
 @font-face {
   font-family: 'SF Pro Display';
-  src: url('../fonts/SF-Pro-Display-Medium.otf') format('opentype');
-  font-weight: 100;       
+  src: url('../fonts/SFProDisplay-Medium.woff2') format('woff2'),
+       url('../fonts/SFProDisplay-Medium.woff') format('woff');
+  font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'SF Pro Rounded';
-  src: url('../fonts/SF-Pro-Rounded-Bold.otf') format('opentype');
-  font-weight: 100;         
+  src: url('../fonts/SFRounded-Bold.woff2') format('woff2'),
+       url('../fonts/SFRounded-Bold.woff') format('woff');
+  font-weight: 700;
   font-style: normal;
+  font-display: swap;
 }

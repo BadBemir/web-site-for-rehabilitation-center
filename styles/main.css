@@ -42,10 +42,16 @@ body {
    ========================================================================== */
 a {
     text-decoration: none;
+
+}
+section > a {
+    letter-spacing: 2px;
+    font-weight: 100;
 }
 
 h1, h2, h3 {
-    font-weight: 600;
+    font-family: 'SF Pro Rounded', system-ui, sans-serif;
+    font-weight: 400;
     line-height: 1.2;
     color: var(--text);
 }
@@ -200,7 +206,6 @@ a.hero-btn {
     display: inline-block;
     background: var(--accent);
     color: white;
-    font-weight: 600;
     padding: 0.9rem 2rem;
     border-radius: 12px;
     text-align: center;
@@ -225,6 +230,36 @@ section.text-center {
     margin: 4rem auto 3rem;
 }
 
+section {
+    margin:15px;
+}
+
+.orange {
+      background-color: rgb(196, 101, 57); 
+    color: white;
+    font-weight: 100;
+    font-size: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.blue {
+      background-color: rgb(46, 55, 175); 
+    color: white;
+    font-weight: 100;
+    font-size: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.green {
+    background-color: rgb(46, 175, 79);    
+    color: white;
+    font-weight: 100;
+    font-size: 20px;
+    display: flex;
+    flex-direction: row;
+}
 /* Карта */
 iframe {
     border-radius: var(--radius);

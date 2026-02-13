@@ -1,6 +1,21 @@
-/* ==========================================================================
-   RESET + ROOT VARIABLES
-   ========================================================================== */
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('../fonts/SFProDisplay-Medium.woff2') format('woff2'),
+       url('../fonts/SFProDisplay-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SF Pro Rounded';
+  src: url('../fonts/SFRounded-Bold.woff2') format('woff2'),
+       url('../fonts/SFRounded-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
 
 * {
     margin: 0;
@@ -29,7 +44,7 @@ html {
 }
 
 body {
-    font-family: 'SF Pro Display', system-ui, sans-serif;
+    font-family: 'SF Pro Display', system-ui, -apple-system, sans-serif;
     font-weight: 400;
     background: var(--bg);
     color: var(--text);
@@ -38,19 +53,16 @@ body {
 }
 
 /* ==========================================================================
-   TYPOGRAPHY
+   TYPOGRAPHY & LINKS
    ========================================================================== */
+
 a {
     text-decoration: none;
-
-}
-section > a {
-    letter-spacing: 2px;
-    font-weight: 100;
+    color: inherit;
 }
 
 h1, h2, h3 {
-    font-family: 'SF Pro Rounded', system-ui, sans-serif;
+    font-family: 'SF Pro Rounded', system-ui, -apple-system, sans-serif;
     font-weight: 400;
     line-height: 1.2;
     color: var(--text);
@@ -67,8 +79,14 @@ h3 {
     margin: 0.8rem 0 0.4rem;
 }
 
+/* ==========================================================================
+   HEADER & NAVIGATION
+   ========================================================================== */
 
 header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     background: var(--header);
     padding: 1rem 0;
     position: sticky;
@@ -78,13 +96,7 @@ header {
     backdrop-filter: blur(8px);
 }
 
-header {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-}
+
 
 .logo {
     display: flex;
@@ -101,44 +113,12 @@ header {
     object-fit: contain;
 }
 
-
-@media (max-width: 768px) {
-    .nav-links {
-     background: var(--header);
-    display: none;
-    position: absolute;
-    flex-direction: column;
-}
-.nav-links.active {
+.nav-links {
     display: flex;
-    top:100px;
-    right: 2%;
-    position: absolute;
-    flex-direction: column;
-    text-align: center;
+    gap: 1.5rem;
 }
 
-
-.burger {
-    cursor: pointer;
-    display: block;
-}
-.burger span{
-    display: block;
-    width: 25px;
-    height: 3px;
-    background-color: #000000;
-    margin: 5px;
-}
-}
-
-
-
-nav {
-    display: flex;
-}
-
-nav a {
+.nav-links a {
     color: var(--text);
     font-weight: 500;
     font-size: 1.05rem;
@@ -147,10 +127,47 @@ nav a {
     transition: all 0.2s ease;
 }
 
-nav a:hover,
-nav a:focus {
+.nav-links a:hover,
+.nav-links a:focus {
     background: rgba(244, 163, 168, 0.15);
     color: var(--accent-dark);
+}
+
+/* Мобильное меню */
+.burger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.burger span {
+    width: 25px;
+    height: 3px;
+    background: #000;
+}
+
+@media (max-width: 768px) {
+    .burger {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        margin: 10px;
+        top: 100%;
+        right: 20px;
+        background: var(--header);
+        flex-direction: column;
+        padding: 1rem;
+        border-radius: 12px;
+        box-shadow: var(--shadow-md);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
 }
 
 /* ==========================================================================
@@ -170,7 +187,7 @@ nav a:focus {
     margin: 2.5rem 0;
 }
 
-/* Карточки специалистов + преимущества */
+/* Карточки (преимущества, специалисты на главной) */
 .item {
     background: var(--paper);
     border-radius: var(--radius);
@@ -178,10 +195,10 @@ nav a:focus {
     box-shadow: var(--shadow-sm);
     transition: all 0.25s ease;
     text-align: center;
+    border: 1px solid var(--border);
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    border: 1px solid var(--border);
 }
 
 .item:hover {
@@ -201,88 +218,48 @@ nav a:focus {
 }
 
 /* Кнопки */
-.hero-btn,
-a.hero-btn {
+.hero-btn {
     display: inline-block;
     background: var(--accent);
     color: white;
     padding: 0.9rem 2rem;
     border-radius: 12px;
-    text-align: center;
-    text-decoration: none;
-    transition: all 0.2s ease;
-    margin-top: 1rem;
     font-size: 1.05rem;
+    transition: all 0.2s ease;
     border: none;
     cursor: pointer;
+    text-align: center;
 }
 
-.hero-btn:hover,
-a.hero-btn:hover {
+.hero-btn:hover {
     background: var(--accent-dark);
     transform: translateY(-1px);
 }
 
-/* Секции с заголовками по центру */
-section.text-center {
-    text-align: center;
-    max-width: 780px;
-    margin: 4rem auto 3rem;
-}
-
-section {
-    margin:15px;
-}
-
-.orange {
-      background-color: rgb(196, 101, 57); 
+/* Контакты — цветные блоки */
+.contact-info .item {
+    padding: 1.2rem;
     color: white;
-    font-weight: 100;
-    font-size: 20px;
-    display: flex;
-    flex-direction: row;
-}
-
-.blue {
-      background-color: rgb(46, 55, 175); 
-    color: white;
-    font-weight: 100;
-    font-size: 20px;
-    display: flex;
-    flex-direction: row;
-}
-
-.green {
-    background-color: rgb(46, 175, 79);    
-    color: white;
-    font-weight: 100;
-    font-size: 20px;
-    display: flex;
-    flex-direction: row;
-}
-/* Карта */
-iframe {
+    font-size: 1.25rem;
+    font-weight: 400;
     border-radius: var(--radius);
-    border: none;
-    box-shadow: var(--shadow-sm);
 }
 
-/* Специалисты — новая раскладка */
+.green  { background: #2eaf4f; }
+.orange { background: #c46539; }
+.blue   { background: #2e37af; }
 
-
-
+/* Специалисты (team.html) */
 .specialist-card {
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 40px;
-    align-items: start;
     background: #FEF9F5;
     border-radius: 24px;
     padding: 40px 32px;
     margin-bottom: 60px;
     box-shadow: 0 12px 36px rgba(0,0,0,0.08);
 }
-
 
 .specialist-photo img {
     width: 100%;
@@ -291,11 +268,6 @@ iframe {
     border-radius: 20px;
     object-fit: cover;
     box-shadow: 0 8px 24px rgba(0,0,0,0.1);
-}
-
-.specialist-info h3 {
-    font-size: 2.1rem;
-    margin-bottom: 8px;
 }
 
 .specialist-role {
@@ -307,14 +279,14 @@ iframe {
 
 .specialist-list {
     list-style: none;
-    padding-left: 0;
+    padding: 0;
     margin: 16px 0 24px;
 }
 
 .specialist-list li {
-    position: relative;
     padding-left: 28px;
     margin-bottom: 12px;
+    position: relative;
     font-size: 1.05rem;
 }
 
@@ -324,7 +296,6 @@ iframe {
     left: 0;
     color: #3AA68F;
     font-size: 1.6rem;
-    line-height: 1;
 }
 
 .specialist-card blockquote {
@@ -337,40 +308,27 @@ iframe {
 }
 
 .contact-block {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-items: start;
-    gap:5px;
     margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
 }
 
-.contact-block button {
-    display: inline-block;
-    background: var(--accent);
-    color: white;
-    font-weight: 600;
-    padding: 0.9rem 2rem;
-    border-radius: 12px;
-    text-align: center;
-    text-decoration: none;
-    transition: all 0.2s ease;
-    font-size: 1.05rem;
+/* Карта */
+iframe {
+    border-radius: var(--radius);
     border: none;
-    cursor: pointer;
-}
-
-.phone {
-    font-size: 1.3rem;
-    font-weight: 600;
-    color: #2F2A2A;
+    box-shadow: var(--shadow-sm);
+    width: 100%;
+    height: 400px;
 }
 
 /* Прелоадер */
 #preloader {
   position: fixed;
   inset: 0;
-  background: var(--bg);       
+  background: var(--bg);          /* или #fdfaf7, ваш фон */
   z-index: 9999;
   display: flex;
   align-items: center;
@@ -381,7 +339,7 @@ iframe {
 .spinner {
   width: 64px;
   height: 64px;
-  border: 8px solid var(--accent);      
+  border: 8px solid var(--accent);       /* розовый из вашей палитры */
   border-top: 8px solid transparent;
   border-radius: 50%;
   animation: spin 1s linear infinite;
@@ -409,33 +367,31 @@ iframe {
   50%      { transform: scale(1.3); opacity: 0.1; }
 }
 
-/* Мобильная версия */
+/* ==========================================================================
+   АДАПТИВНОСТЬ
+   ========================================================================== */
+
 @media (max-width: 880px) {
-    .specialist-card,
-    .specialist-card.reverse {
+    .specialist-card {
         grid-template-columns: 1fr;
         gap: 28px;
         padding: 32px 20px;
     }
-    
+
     .specialist-photo img {
         max-width: 100%;
         margin: 0 auto;
-        display: block;
     }
 }
 
-/* Мобильная адаптивность */
 @media (max-width: 768px) {
     header .wrapper {
         flex-direction: column;
         padding: 1rem;
     }
-    nav {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 1rem;
+
+    .nav-links {
+        width: 90%;
+        right: 5%;
     }
 }
-
-

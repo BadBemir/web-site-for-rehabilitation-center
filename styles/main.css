@@ -170,9 +170,6 @@ header {
     }
 }
 
-/* ==========================================================================
-   MAIN LAYOUT
-   ========================================================================== */
 
 .wrapper {
     max-width: 1180px;
@@ -189,7 +186,14 @@ header {
 section .item {
     margin: 15px;
 }
+
+section span {
+    font-family: 'SF Pro Rounded', system-ui, -apple-system, sans-serif;
+}
+
 /* Карточки (преимущества, специалисты на главной) */
+
+
 .item {
     background: var(--paper);
     border-radius: var(--radius);
@@ -203,11 +207,22 @@ section .item {
     gap: 1rem;
 }
 
-.item:hover {
-    transform: translateY(-6px);
-    box-shadow: var(--shadow-md);
-    border-color: var(--accent);
+.item-contact {
+    margin-top: 15px ;
+    background: var(--paper);
+    border-radius: var(--radius);
+    padding: 2rem 1.6rem;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.25s ease;
+    text-align: center;
+    border: 1px solid var(--border);
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+    text-align: left;
 }
+
+
 
 .item img {
     width: 120px;
@@ -218,6 +233,16 @@ section .item {
     border: 3px solid #fff;
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
+
+.item-contact img {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
 
 /* Кнопки */
 .hero-btn {
@@ -247,20 +272,20 @@ section .item {
     border-radius: var(--radius);
 }
 
-.green  { background: #2eaf4f; }
-.orange { background: #c46539; }
-.blue   { background: #2e37af; }
 
 /* Специалисты (team.html) */
 .specialist-card {
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 40px;
-    background: #FEF9F5;
-    border-radius: 24px;
     padding: 40px 32px;
     margin-bottom: 60px;
-    box-shadow: 0 12px 36px rgba(0,0,0,0.08);
+    background: var(--paper);
+    border-radius: var(--radius);
+    padding: 2rem 1.6rem;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.25s ease;
+    border: 1px solid var(--border);
 }
 
 .specialist-photo img {

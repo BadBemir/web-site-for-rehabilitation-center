@@ -86,17 +86,25 @@ h3 {
 header {
     display: flex;
     justify-content: space-around;
+    border-radius: 28px !important; /* Временно добавим !important для проверки */
+    margin: 16px;
     align-items: center;
-    background: var(--header);
+    background: var(--header); /* Временно сделаем красным для проверки */
     padding: 1rem 0;
     position: sticky;
-    top: 0;
+     top: 16px;;
     z-index: 100;
-    box-shadow: var(--shadow-sm);
-    backdrop-filter: blur(8px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
 }
 
-
+/* Класс для приклеенного состояния */
+header.header-sticky {
+    border-radius: 0 0 28px 28px !important; /* Верхние углы = 0 */
+    margin-top: 0 !important;
+    background: blue !important; /* Временно сделаем синим для проверки */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
 
 .logo {
     display: flex;

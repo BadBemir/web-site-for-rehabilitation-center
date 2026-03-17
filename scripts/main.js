@@ -18,3 +18,32 @@ burger.addEventListener('click', () => {
 });
 
 
+// Ждем загрузку DOM
+document.addEventListener('DOMContentROLL', function() {
+    const header = document.querySelector('header');
+    
+    // Проверяем, нашли ли мы хедер
+    console.log('Хедер найден:', header);
+    
+    // Функция для проверки прокрутки
+    function checkScroll() {
+        // Сколько пикселей прокрутили
+        const scrollY = window.scrollY;
+        console.log('Прокрутка:', scrollY);
+        
+        // Если прокрутили больше 10px, добавляем класс
+        if (scrollY > 10) {
+            header.classList.add('header-sticky');
+            console.log('Класс ДОБАВЛЕН');
+        } else {
+            header.classList.remove('header-sticky');
+            console.log('Класс УДАЛЕН');
+        }
+    }
+    
+    // Проверяем сразу при загрузке
+    checkScroll();
+    
+    // Проверяем при прокрутке
+    window.addEventListener('scroll', checkScroll);
+});
